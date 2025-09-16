@@ -36,11 +36,11 @@ public class Menu {
         
         default: System.out.print("Opção inválida");
         break;
-    }        
+     }        
             
     } while (opcao != 5); 
                 
     scanner.close();
         
-      }    
-    }    
+   }    
+}    
