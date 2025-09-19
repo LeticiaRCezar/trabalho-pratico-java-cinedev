@@ -20,7 +20,7 @@ public class CompraIngresso {
         System.out.println("Assento (1-20): ");
         int a = scanner.nextInt() - 1;
         
-        if (mapa.liberar(f, a)) {
+        if (mapa.ocupar(f, a)) {
             System.out.println("Ingresso Comprado!");
         } else {
             System.out.println("Esse assento já está ocupado!");
