@@ -18,7 +18,19 @@ public class MapaAssentos {
     
     // Exibindo o mapa da sala com fileiras e assentos
     public void exibirMapa() {
-        System.out.println("Mapa da Sala: ");
+        
+        System.out.println();
+        System.out.println("------------------------");
+        System.out.println("MAPA DE ASSENTOS DA SALA");
+        System.out.println("------------------------");
+        
+        System.out.print("           ");
+        for (int j = 0; j < sala[0].length; j++) {
+            System.out.printf("%3d", j + 1);
+        }
+        
+        System.out.println();
+        
         for (int i = 0; i < sala.length; i++) {
             System.out.printf("Fileira %2d: ", (i + 1));
             for (int j = 0; j < sala[i].length; j++) {
@@ -62,5 +74,14 @@ public class MapaAssentos {
             }
         }
         return soma;
+    }
+    
+    // Método para validação de compra/cancelamento
+    public int Fileiras() {
+        return sala.length;
+    }
+    
+    public int Assentos() {
+        return sala[0].length;
     }
 }
