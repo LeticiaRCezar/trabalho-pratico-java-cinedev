@@ -4,12 +4,20 @@ public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
+        // Puxando os objetos das classes
+        MapaAssentos mapa = new MapaAssentos(10, 20);
+        CompraIngresso compra = new CompraIngresso(mapa, scanner);
+        CancelamentoIngresso cancelamento = new CancelamentoIngresso(mapa, scanner);
+        RelatorioOcupacao ocupacao = new RelatorioOcupacao(mapa);
+        
+    // Exibindo o menu principal
     System.out.println("MENU CINEDEV");
     System.out.println("------------");
     
     int opcao;
     
-    do {    
+    do {   
+    // Mostrando as opções disponíveis
     System.out.println("1. Exibir mapa de Assentos");
     System.out.println("2. Comprar Ingresso");
     System.out.println("3. Cancelar Compra de Ingresso");
@@ -18,29 +26,30 @@ public class Menu {
     System.out.println("Escolha uma opção: ");
     opcao = scanner.nextInt();
     
+    // Opções escolhida
     switch(opcao) {
-        case 1: System.out.println("Exibição dos assentos: ");
+        case 1: mapa.exibirMapa();
         break;
         
-        case 2: System.out.println("Realizar compra do ingresso: ");
+        case 2: compra.comprar();
+        break;        
+        
+        case 3: cancelamento.cancelar();
         break;
         
-        case 3: System.out.println("Cancelamento de compra: ");
+        case 4: ocupacao.exibir();
         break;
-        
-        case 4: System.out.println("Assentos ocupados: ");
-        break;
-        
+
         case 5: System.out.println("Saindo...");
         break;
         
         default: System.out.print("Opção inválida");
         break;
-     }        
+    }        
             
     } while (opcao != 5); 
                 
     scanner.close();
         
-   }    
-}    
+      }    
+    }
