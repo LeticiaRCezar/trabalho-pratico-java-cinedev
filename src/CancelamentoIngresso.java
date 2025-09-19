@@ -2,14 +2,17 @@ import java.util.Scanner;
 
 public class CancelamentoIngresso {
     
+    // Atributos da classe para cancelamento de ingresso
     private MapaAssentos mapa;
     private Scanner scanner;
     
+    // Recebe mapa de assentos e o scanner para leitura
     public CancelamentoIngresso (MapaAssentos mapa, Scanner scanner) {
         this.mapa = mapa;
         this.scanner = scanner;   
     }
     
+    // Processo para confirmar o cancelamento da compra do ingresso
     public void cancelar() {
         System.out.println("Fileira (1-10): ");
         int f = scanner.nextInt() - 1;
